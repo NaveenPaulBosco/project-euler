@@ -1,0 +1,1 @@
+/home/naveen/IdeaProjects/project-euler/build/classes/kotlin/main/MainKt.class
