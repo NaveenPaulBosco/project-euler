@@ -1,14 +1,13 @@
 fun main(args: Array<String>) {
 
 
-    // Project Euler - Problem 1
+    // ****************** Project Euler - Problem 1 - BEGIN **************************
     // https://projecteuler.net/problem=1
 
     // brute-force method
     val sumValBruteForce = bruteForceMethod(999)
     // smart method
     val sumValSmartMethod = smartMethod(999)
-
 
 
     // test cases brute force method
@@ -25,6 +24,42 @@ fun main(args: Array<String>) {
 
     println("Answer via bruteForceMethod  $sumValBruteForce")
     println("Answer via smartMethod  $sumValSmartMethod")
+
+    // ****************** Project Euler - Problem 1 - END ****************************
+
+
+    // ****************** Project Euler - Problem 2 - BEGIN **************************
+    // https://projecteuler.net/problem=2
+
+
+    val sumOfEvenFibonacci = sumOfEvenFibonacciSequence(34)
+
+    println("******** Problem 2 ********")
+    println("Answer via bruteForce $sumOfEvenFibonacci")
+
+}
+
+fun sumOfEvenFibonacciSequence(maxVal: Int): Int {
+    var sumOfItems: Int = 0; var result = 0
+    var previousVal = 0; var currentVal = 1
+
+
+    do{
+        result = previousVal + currentVal
+        previousVal = currentVal
+        currentVal = result
+        println(currentVal)
+
+        if(result %2 ==0)
+            sumOfItems += result
+
+    }while (currentVal <= 4000000)
+    return sumOfItems
+}
+
+fun addCurrentValAndPrevVal(currentVal: Int, previousVal: Int): Int {
+    return  currentVal + previousVal
+
 }
 
 private fun smartMethod(countToVal: Int): Int {
